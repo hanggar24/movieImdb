@@ -10,8 +10,7 @@
           x-small
           fab
           dark
-          @click="toggleDarkMode"
-        >
+          @click="toggleDarkMode">
           <v-icon>mdi-weather-night</v-icon>
         </v-btn>
         <v-btn
@@ -19,8 +18,7 @@
           color="white"
           x-small
           fab
-          @click="toggleDarkMode"
-        >
+          @click="toggleDarkMode">
           <v-icon color="warning">
             mdi-white-balance-sunny
           </v-icon>
@@ -32,10 +30,7 @@
       <Nuxt />
     </v-main>
     <v-footer>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, non
-      corporis asperiores necessitatibus porro nulla libero consectetur error,
-      unde laboriosam earum cupiditate aliquam saepe distinctio numquam pariatur
-      quidem delectus tempora?
+      copyRight imdb tes movie
     </v-footer>
   </v-app>
 </template>
