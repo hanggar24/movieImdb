@@ -1,8 +1,16 @@
 <template>
   <v-app>
-    <v-app-bar app fixed elevate-on-scroll>
+    <v-app-bar app fixed elevate-on-scroll color="white">
       <v-container class="d-flex align-center">
-        <v-toolbar-title>Movie App</v-toolbar-title>
+        <v-icon x-large color="primary">
+          mdi-movie-roll
+        </v-icon>
+        <v-spacer />
+        <v-toolbar-title>
+          <nuxt-link to="/">
+            <img src="../assets/img/logo.png" class="w-20 h-14 object-contain" alt="Movie App">
+          </nuxt-link>
+        </v-toolbar-title>
         <v-spacer />
         <v-btn
           v-if="!$vuetify.theme.dark"
@@ -27,11 +35,25 @@
     </v-app-bar>
 
     <v-main>
+      <v-container>
+        <v-row justify="center">
+          <v-col cols="11" lg="10">
+            <v-text-field
+              v-model="searchText"
+              clearable
+              label="Cari Film"
+              rounded
+              single-line
+              solo
+              x-large
+              append-icon="mdi-magnify"
+              @click:clear="removeQuerySearch"
+              @keyup.enter="searchMovie" />
+          </v-col>
+        </v-row>
+      </v-container>
       <Nuxt />
     </v-main>
-    <v-footer>
-      copyRight imdb tes movie
-    </v-footer>
   </v-app>
 </template>
 
@@ -39,7 +61,8 @@
 export default {
   name: 'DefaultLayout',
   data: () => ({
-    darkMode: false
+    darkMode: false,
+    searchText: ''
   }),
   computed: {
     switchLabel () {
@@ -64,11 +87,30 @@ export default {
       localStorage.setItem('darkMode', this.$vuetify.theme.dark.toString())
     }
   },
+  created () {
+    const { s } = this.$route.query
+    if (s) { this.searchText = s }
+  },
   methods: {
+    searchMovie (e) {
+      this.$router.push({
+        path: '/search',
+        query: {
+          s:
+        this.searchText
+        }
+      })
+      console.log(e, 'tes')
+    },
     toggleDarkMode () {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
       this.darkMode = !this.darkMode
       localStorage.setItem('darkMode', this.$vuetify.theme.dark)
+    },
+    removeQuerySearch () {
+      const query = Object.assign({}, this.$route.query)
+      delete query.s
+      this.$router.push({ query })
     }
   }
 }

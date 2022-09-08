@@ -16,7 +16,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' },
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'crossorigin' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap' }
     ]
   },
 
@@ -62,7 +65,16 @@ export default {
       dark: true,
       themes: {
         light: {
-          primary: '#0072B5',
+          primary: '#D24B50',
+          accent: colors.grey.darken3,
+          secondary: '#B55A30',
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
+        },
+        dark: {
+          primary: '#D24B50',
           accent: colors.grey.darken3,
           secondary: '#B55A30',
           info: colors.teal.lighten1,

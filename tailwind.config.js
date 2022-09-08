@@ -8,7 +8,18 @@ module.exports = {
     './nuxt.config.{js,ts}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      boxShadow: {
+        main: 'var(--shadow-main)'
+      },
+      colors: {
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)'
+      },
+      fontFamily: {
+        poppins: "'Poppins', sans-serif"
+      }
+    }
   },
   plugins: []
 }
