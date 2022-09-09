@@ -3,7 +3,7 @@
 ## HOW TO RUN THIS PROJECT
 
 ```bash
-$ Create .env file & insert API_KEY = <your_api_key>
+$ Create .env file in root folder & insert your API_KEY = <your_api_key>
 $ npm Install
 $ npm run dev
 ```
