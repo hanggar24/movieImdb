@@ -1,5 +1,10 @@
 # tes-imdb-movie
 
+#HOW TO RUN THIS PROJECT
+#1.Create .env file & insert API_KEY = <your_api_key>
+#2. npm Install
+#3. npm run dev
+
 ## Build Setup
 
 ```bash
